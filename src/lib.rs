@@ -208,6 +208,8 @@ cfg_if! {
         #[path = "windows_uwp.rs"] mod imp;
     } else if #[cfg(windows)] {
         #[path = "windows.rs"] mod imp;
+    } else if #[cfg(target_os = "switch")] {
+        #[path = "switch.rs"] mod imp;
     } else if #[cfg(all(target_arch = "x86_64", target_env = "sgx"))] {
         #[path = "rdrand.rs"] mod imp;
     } else if #[cfg(all(feature = "rdrand",
